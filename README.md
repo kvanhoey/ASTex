@@ -69,6 +69,7 @@ Then you can install the dependencies:
 ## Data
 
 **IMPORTANT**
+
 Some tests, tutorials and algorithms read in some example images and write image results out.
 In order to keep the original Data directory of ASTex clean we use a copy whose path can be chosen 
 at cmake configuration time.
