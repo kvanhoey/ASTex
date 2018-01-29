@@ -7,7 +7,7 @@ The purpose of this library is to support collaborative coding and to allow for 
 # Installation
 
 ## Dependencies:
-To compile and use ASTex, you need some libraries:
+To compile and use ASTex, you need the following libraries:
 - ITK 4.10 
 - zlib
 - openexr for saving/loading images in floating point format.
@@ -21,13 +21,13 @@ You need some classic development tools (minimal supported version)
 	- Visual Studio C++ 2015
 
 ## Linux
-Just install packages:
-- libinsighttoolkit4-dev (4.10 min)
+Install the following packages:
+- libinsighttoolkit4-dev (version >=4.10)
 - libpng-dev
 - libopenexr-dev 
 
 ## Mac OS/X
-The most simple way to install dependencies is to use [homebrew](https://brew.sh/) package system.
+The most simple way to install dependencies is to use the [homebrew](https://brew.sh/) package system.
 Then you can install the dependencies:
 - brew install insighttoolkit
 - brew install openexr
@@ -68,33 +68,33 @@ Then you can install the dependencies:
 
 ## Data
 
-Some tests, tutorials and algorithms use read example images and write some results.
-In order to keep original Data directory of ASTex clean we use a copy which pass can be choosen 
-at cmake configuration stage.
+Some tests, tutorials and algorithms read in some example images and write image results out.
+In order to keep the original Data directory of ASTex clean we use a copy whose path can be chosen 
+at cmake configuration time.
 
-You have to copy yourself the contain of the Data directory in to the right place (see ASTEX\_TEMPO\_PATH clake variable).
+You should copy the content of the Data/ directory to the chosen path manually for this to work (see the ASTEX\_TEMPO\_PATH cmake variable).
 
 ## Compilation
 
 ### on Linux & Mac
 Use CMake as usual:
-* create a build directory as same level than ASTex (ASTex-build or ASTex-buildDebug for example)
-* go inside build directory and do cmake ../ASTex (or use gui)
-* or let (a recent) Qtcreator do the job !
+* Create a build directory at the same level as ASTex/ (ASTex-build/ or ASTex-buildDebug/ for example)
+* Go inside your build directory and type "cmake ../ASTex"
+* Alternatively, use the cmake GUI or let (a recent) Qtcreator do the job !
 
 ### on Windows + VisualStudio
 
-* build directory has been createde by install script
-* use the script _reset\_astex\_solu_ in your copy of _script\_windows_ in case of trouble
-* use CMake-gui to customize the build
-* then launch Visual and load ASTex solution which has been generated in the build directory
+* The build directory has been created by install script
+* Use the script _reset\_astex\_solu_ in your copy of _script\_windows_ in case of trouble
+* Use CMake-gui to customize the build
+* Launch Visual Studio and load the ASTex solution which has been generated in the build directory
 
 ### CMake Options
 There are some original options/values that can be set at the cmake stage:
 
 * ASTEX\_ALGO\_xxx choose to build the different implemented algorithms.
 * ASTEX\_BUILD\_xxx choose to build bench/tuto/test
-* ASTEX\_PERSO\_xxx for each directory added in ASTex that contain a CMakeLists.txt set this to ON to build. When you add a directory just relaunch cmake.
-* ASTEX\_TEMPO\_PATH path of directory use to store images for test and tuto (copy ASTex/Data into it)
-* ASTEX\_USE\_CPP14 set this to ON if VXL say that you are using a C++ standard version older than the one used ton compile the lib.
+* ASTEX\_PERSO\_xxx set to ON if you wish to build each directory added in ASTex/ containing a CMakeLists.txt. Note: just relaunch cmake after adding a directory.
+* ASTEX\_TEMPO\_PATH path of directory used to store images for test and tutorial scripts (copy ASTex/Data into it)
+* ASTEX\_USE\_CPP14 set this to ON if VXL complains that you are using a C++ standard version older than the one used to compile the ASTex library.
 
